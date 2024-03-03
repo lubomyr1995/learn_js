@@ -155,3 +155,6 @@
 // }
 //
 // console.log(exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}], 'USD'));
+
+let btn = document.getElementById('button');
+console.log(btn)
