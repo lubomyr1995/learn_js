@@ -84,20 +84,6 @@
 
 
 // // описати колоду карт (від 6 до туза без джокерів)
-// let suits = ['spade', 'diamond', 'heart', 'clubs'];
-// let values = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
-// let colors = {spade: 'black', diamond: 'red', heart: 'red', clubs: 'black'};
-//
-// let desk_of_cards = [];
-//
-// values.forEach(value => {
-//     suits.forEach(suit => {
-//         desk_of_cards.push({cardSuit: suit, value: value, color: colors[suit]});
-//     });
-// });
-//
-// console.log(desk_of_cards);
-
 // // - знайти піковий туз
 // // - всі шістки
 // // - всі червоні карти
@@ -147,6 +133,24 @@
 //     {cardSuit: 'heart', value: 'ace', color: 'red'},
 //     {cardSuit: 'clubs', value: 'ace', color: 'black'},
 // ];
+// function create_desk_of_cards() {
+//     let suits = ['spade', 'diamond', 'heart', 'clubs'];
+//     let values = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
+//     let colors = {spade: 'black', diamond: 'red', heart: 'red', clubs: 'black'};
+//
+//     let desk_of_cards = [];
+//
+//     values.forEach(value => {
+//         suits.forEach(suit => {
+//             desk_of_cards.push({cardSuit: suit, value: value, color: colors[suit]});
+//         });
+//     });
+//     return desk_of_cards
+// }
+//
+// let desk_of_cards = create_desk_of_cards();
+// console.log(create_desk_of_cards());
+//
 // let find_spade_ace = desk_of_cards.find(card => card.value === 'ace' && card.cardSuit === 'spade');
 // console.log('find_spade_ace:', find_spade_ace);
 //
