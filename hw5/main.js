@@ -126,24 +126,22 @@
 // console.log(swap([11, 22, 33, 44], 0, 1));
 
 
-// - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
-// Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
-let exchange = (sumUAH, currencyValues, exchangeCurrency) => {
-    let temp_value
-    for (const obj_currency of currencyValues) {
-        if (obj_currency['currency'] === exchangeCurrency) {
-            temp_value = obj_currency['value']
-        }
-    }
-    if (!temp_value) {
-        console.log(`Currency like "${exchangeCurrency}" is not found!`);
-        return;
-    }
-    return sumUAH / temp_value
-}
-
-let value_of_exchange = [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}];
-console.log(exchange(1000, value_of_exchange, 'USD'));
-console.log(exchange(1000, value_of_exchange, 'US'));
-
-
+// // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
+// // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
+// let exchange = (sumUAH, currencyValues, exchangeCurrency) => {
+//     let temp_value
+//     for (const obj_currency of currencyValues) {
+//         if (obj_currency['currency'] === exchangeCurrency) {
+//             temp_value = obj_currency['value']
+//         }
+//     }
+//     if (!temp_value) {
+//         console.log(`Currency like "${exchangeCurrency}" is not found!`);
+//         return;
+//     }
+//     return sumUAH / temp_value
+// }
+//
+// let value_of_exchange = [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}];
+// console.log(exchange(1000, value_of_exchange, 'USD'));
+// console.log(exchange(1000, value_of_exchange, 'US'));
