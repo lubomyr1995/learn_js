@@ -84,6 +84,20 @@
 
 
 // // описати колоду карт (від 6 до туза без джокерів)
+// let suits = ['spade', 'diamond', 'heart', 'clubs'];
+// let values = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
+// let colors = {spade: 'black', diamond: 'red', heart: 'red', clubs: 'black'};
+//
+// let desk_of_cards = [];
+//
+// values.forEach(value => {
+//     suits.forEach(suit => {
+//         desk_of_cards.push({cardSuit: suit, value: value, color: colors[suit]});
+//     });
+// });
+//
+// console.log(desk_of_cards);
+
 // // - знайти піковий туз
 // // - всі шістки
 // // - всі червоні карти
