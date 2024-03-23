@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User details</title>
+</head>
+<body>
+<h1>Hello, this is user details!</h1>
+<div class="user-details"></div>
+
+<script>
+    function getDetailsByUserId(userId, DOMElement) {
+        let url = `https://jsonplaceholder.typicode.com/users/${userId}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(details => {
+                renderUserDetails(details, DOMElement);
+                goBackToUsers(DOMElement);
+            })
+    }
+
+    // звичайна функція
+    // function renderUserDetails(details, DOMElement) {
+    //     for (const key in details) {
+    //         let div = document.createElement('div');
+    //         if (typeof details[key] === "object") {
+    //             div.innerText = `${key.toUpperCase()}`;
+    //             for (const secondKey in details[key]) {
+    //                 let divSecondOrder = document.createElement('div');
+    //                 if (typeof details[key][secondKey] === "object") {
+    //                     divSecondOrder.innerText = `${secondKey.toUpperCase()}`
+    //                     for (const thirdKey in details[key][secondKey]) {
+    //                         let divThirdOrder = document.createElement('div');
+    //                         divThirdOrder.innerText = `${thirdKey} - ${details[key][secondKey][thirdKey]}`
+    //                         divSecondOrder.appendChild(divThirdOrder);
+    //                     }
+    //                     div.appendChild(divSecondOrder);
+    //                 } else {
+    //                     divSecondOrder.innerText = `${secondKey} - ${details[key][secondKey]}`;
+    //                     div.appendChild(divSecondOrder);
+    //                 }
+    //                 DOMElement.appendChild(div);
+    //             }
+    //             DOMElement.appendChild(div);
+    //         } else {
+    //             div.innerText = `${key} - ${details[key]}`
+    //             DOMElement.appendChild(div)
+    //         }
+    //     }
+    // }
+
+    // використап рекурсію
+    function renderUserDetails(details, DOMElement) {
+        for (const key in details) {
+            DOMElement.appendChild(createDivWithContent(key, details[key]));
+        }
+
+        function createDivWithContent(key, value) {
+            let div = document.createElement('div');
+            if (typeof value === "object") {
+                div.innerText = `${key.toUpperCase()}`;
+                for (const innerKey in value) {
+                    div.appendChild(createDivWithContent(innerKey, value[innerKey]));
+                }
+            } else {
+                div.innerText = `${key} - ${value}`;
+            }
+            return div;
+        }
+    }
+
+    // function in order to navigate to previous users
+    function goBackToUsers(DOMElement) {
+        let btn = document.createElement('button');
+        btn.innerText = 'go to users';
+        btn.onclick = function () {
+            location.href = `users.html`;
+        }
+        DOMElement.appendChild(btn);
+    }
+
+    let userId = new URL(location.href).searchParams.get('id');
+    let userDetailsBlock = document.getElementsByClassName('user-details')[0];
+    getDetailsByUserId(userId, userDetailsBlock)
+</script>
+</body>
+</html>
