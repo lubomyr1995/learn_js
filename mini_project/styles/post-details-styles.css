@@ -1,0 +1,85 @@
+body {
+    background-color: #b9efdc;
+    margin: 0;
+    font-family: "Exo 2", sans-serif;
+}
+
+h2 {
+    text-align: center;
+}
+
+.back-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.back-button-to-posts {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.back-button, .back-button-to-posts, .comments-button {
+    font-family: "Exo 2", sans-serif;
+    cursor: pointer;
+    background-color: #8f8fef;
+    padding: 5px 10px;
+    margin: 10px;
+    border: 2px solid silver;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.back-button:hover, .back-button-to-posts:hover, .comments-button:hover {
+    background-color: #acf15e;
+}
+
+.post-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-details-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid silver;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #c3c3f3;
+    font-weight: 500;
+    width: 80vw;
+    gap: 10px;
+}
+
+.post-details-block > p {
+    text-align: center;
+}
+
+.none-block {
+    display: none;
+}
+
+.btn-color {
+    background-color: #acf15e;
+}
+
+.comments-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.comment-block {
+    margin: 5px;
+    width: 40%;
+    /*max-width: 45%;*/
+    /*min-width: 45%;*/
+    border: 2px solid silver;
+    border-radius: 5px;
+    padding: 5px;
+}
